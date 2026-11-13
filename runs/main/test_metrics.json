@@ -1,0 +1,165 @@
+{
+ "cross_validation_per_fold": {
+  "0": {
+   "n": 1242,
+   "n_pos": 551,
+   "n_neg": 691,
+   "roc_auc": 1.0,
+   "pr_auc_prior": 1.0,
+   "logloss_prior": 0.011760474318530549,
+   "brier_prior": 0.004503960181403069,
+   "ece_prior": 0.006480071053311745,
+   "threshold": 0.5,
+   "recall": 0.0,
+   "specificity": 1.0,
+   "precision_prior": 0.0,
+   "mcc_prior": 0.0,
+   "mean_p_pos": 0.33351439682673284,
+   "mean_p_neg": 0.0001866514933544706
+  },
+  "1": {
+   "n": 1157,
+   "n_pos": 545,
+   "n_neg": 612,
+   "roc_auc": 1.0,
+   "pr_auc_prior": 1.0,
+   "logloss_prior": 0.011217915042865964,
+   "brier_prior": 0.004461615446479846,
+   "ece_prior": 0.006869730857362688,
+   "threshold": 0.5,
+   "recall": 0.0,
+   "specificity": 1.0,
+   "precision_prior": 0.0,
+   "mcc_prior": 0.0,
+   "mean_p_pos": 0.33212447073193924,
+   "mean_p_neg": 0.00019290461078997823
+  },
+  "2": {
+   "n": 1254,
+   "n_pos": 549,
+   "n_neg": 705,
+   "roc_auc": 1.0,
+   "pr_auc_prior": 1.0,
+   "logloss_prior": 0.01173754112593402,
+   "brier_prior": 0.004673614751834765,
+   "ece_prior": 0.00706240496275075,
+   "threshold": 0.5,
+   "recall": 0.0,
+   "specificity": 1.0,
+   "precision_prior": 0.0,
+   "mcc_prior": 0.0,
+   "mean_p_pos": 0.3164253237593107,
+   "mean_p_neg": 0.00022894767711500904
+  },
+  "3": {
+   "n": 1237,
+   "n_pos": 546,
+   "n_neg": 691,
+   "roc_auc": 0.9986986000010601,
+   "pr_auc_prior": 0.9964562942395335,
+   "logloss_prior": 0.011125466867310033,
+   "brier_prior": 0.004305760022548895,
+   "ece_prior": 0.0067123487550435,
+   "threshold": 0.5,
+   "recall": 0.0,
+   "specificity": 1.0,
+   "precision_prior": 0.0,
+   "mcc_prior": 0.0,
+   "mean_p_pos": 0.3441712301006746,
+   "mean_p_neg": 0.00022960013198297088
+  },
+  "4": {
+   "n": 1219,
+   "n_pos": 552,
+   "n_neg": 667,
+   "roc_auc": 1.0,
+   "pr_auc_prior": 1.0,
+   "logloss_prior": 0.01154178178721072,
+   "brier_prior": 0.004589112171660808,
+   "ece_prior": 0.007001200675765585,
+   "threshold": 0.5,
+   "recall": 0.0,
+   "specificity": 1.0,
+   "precision_prior": 0.0,
+   "mcc_prior": 0.0,
+   "mean_p_pos": 0.32258706903352236,
+   "mean_p_neg": 0.00022936501626344424
+  }
+ },
+ "cross_validation_mean_std": {
+  "roc_auc": {
+   "mean": 0.9997397200002119,
+   "std": 0.0005205599995759424
+  },
+  "pr_auc_prior": {
+   "mean": 0.9992912588479067,
+   "std": 0.0014174823041865903
+  },
+  "logloss_prior": {
+   "mean": 0.011476635828370257,
+   "std": 0.00026196791513871643
+  },
+  "brier_prior": {
+   "mean": 0.004506812514785477,
+   "std": 0.00012415251526258614
+  }
+ },
+ "oof_calibrated": {
+  "n": 6109,
+  "n_pos": 2743,
+  "n_neg": 3366,
+  "roc_auc": 0.9998248661476986,
+  "pr_auc_prior": 0.999304075693865,
+  "logloss_prior": 0.00043586476592967016,
+  "brier_prior": 2.114845631087244e-05,
+  "ece_prior": 0.0003582299204642663,
+  "threshold": 0.6577050088360119,
+  "recall": 0.9967189208895371,
+  "specificity": 1.0,
+  "precision_prior": 1.0,
+  "mcc_prior": 0.9983415690600534,
+  "mean_p_pos": 0.9814240053706272,
+  "mean_p_neg": 0.0001889388251881002
+ },
+ "test": {
+  "n": 693,
+  "n_pos": 309,
+  "n_neg": 384,
+  "roc_auc": 1.0,
+  "pr_auc_prior": 1.0,
+  "logloss_prior": 0.00038301888768320905,
+  "brier_prior": 4.373226609325192e-06,
+  "ece_prior": 0.00038079622311725116,
+  "threshold": 0.6577050088360119,
+  "recall": 1.0,
+  "specificity": 1.0,
+  "precision_prior": 1.0,
+  "mcc_prior": 1.0,
+  "mean_p_pos": 0.9803757489314189,
+  "mean_p_neg": 0.00018641789134488996
+ },
+ "calibration": {
+  "prior": 0.01,
+  "a": 1.6536376799899601,
+  "b": -2.2130715054552303,
+  "fit_converged": true,
+  "threshold": 0.6577050088360119,
+  "oof_mcc_at_threshold": 0.9983415690600534,
+  "formula": "p = 1 / (1 + exp(-(a * mean_fold_logit + b)))"
+ },
+ "test_reliability": [
+  {
+   "bin": "0.0-0.1",
+   "n": 384,
+   "mean_pred": 0.00018641789134489,
+   "observed": 0.0
+  },
+  {
+   "bin": "0.9-1.0",
+   "n": 309,
+   "mean_pred": 0.980375748931419,
+   "observed": 1.0
+  }
+ ],
+ "notes": "All *_prior metrics weight classes to the deployment prior. Test has few negatives; treat as indicative."
+}

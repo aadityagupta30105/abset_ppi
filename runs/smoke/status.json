@@ -1,0 +1,16 @@
+{
+ "run": "smoke",
+ "folds": {
+  "0": {
+   "state": "done",
+   "epochs_done": 2,
+   "max_epochs": 2,
+   "best_epoch": 2,
+   "best_metric": 0.05214690123341825,
+   "patience_left": 2
+  }
+ },
+ "state": "finished",
+ "current_fold": 0,
+ "updated": "2026-10-27 22:29:45"
+}

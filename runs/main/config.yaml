@@ -1,0 +1,48 @@
+data:
+  processed_dir: data/processed
+  embeddings_dir: data/embeddings
+embeddings:
+  use: true
+  model: facebook/esm2_t33_650M_UR50D
+  dim: 1280
+  batch_tokens: 4000
+  window: 1000
+model:
+  hidden: 128
+  edge_hidden: 64
+  heads: 8
+  graph_layers: 6
+  cross_layers: 2
+  cross_cutoff: 10.0
+  plm_proj: 64
+  rbf_bins: 16
+  dropout: 0.2
+train:
+  folds:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  max_epochs: 60
+  patience: 12
+  early_stop_metric: val_logloss_prior
+  batch_size: 16
+  lr: 0.0003
+  weight_decay: 0.01
+  warmup_frac: 0.05
+  grad_clip: 1.0
+  label_smoothing: 0.05
+  loss_weights:
+    main: 1.0
+    dockq: 0.5
+    residue: 0.3
+    rank: 0.2
+  matched_pair_prob: 0.5
+  amp: false
+  seed: 0
+  log_every: 20
+calibration:
+  prior: 0.01
+eval:
+  batch_size: 32

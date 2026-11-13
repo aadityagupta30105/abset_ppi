@@ -1,0 +1,9 @@
+{
+ "prior": 0.01,
+ "a": 1.6536376799899601,
+ "b": -2.2130715054552303,
+ "fit_converged": true,
+ "threshold": 0.6577050088360119,
+ "oof_mcc_at_threshold": 0.9983415690600534,
+ "formula": "p = 1 / (1 + exp(-(a * mean_fold_logit + b)))"
+}

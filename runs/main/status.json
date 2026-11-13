@@ -1,0 +1,48 @@
+{
+ "run": "main",
+ "folds": {
+  "0": {
+   "state": "done",
+   "epochs_done": 13,
+   "max_epochs": 60,
+   "best_epoch": 1,
+   "best_metric": 0.011760474357370475,
+   "patience_left": 0
+  },
+  "1": {
+   "state": "done",
+   "epochs_done": 19,
+   "max_epochs": 60,
+   "best_epoch": 7,
+   "best_metric": 0.011217915176510313,
+   "patience_left": 0
+  },
+  "2": {
+   "state": "done",
+   "epochs_done": 15,
+   "max_epochs": 60,
+   "best_epoch": 3,
+   "best_metric": 0.011737540999174963,
+   "patience_left": 0
+  },
+  "3": {
+   "state": "done",
+   "epochs_done": 24,
+   "max_epochs": 60,
+   "best_epoch": 12,
+   "best_metric": 0.011125466852254162,
+   "patience_left": 0
+  },
+  "4": {
+   "state": "done",
+   "epochs_done": 24,
+   "max_epochs": 60,
+   "best_epoch": 12,
+   "best_metric": 0.011541781661311036,
+   "patience_left": 0
+  }
+ },
+ "state": "finished",
+ "current_fold": 4,
+ "updated": "2026-10-28 00:24:06"
+}

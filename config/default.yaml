@@ -1,0 +1,48 @@
+# AbSet antibody–antigen pose scorer: training configuration.
+# Every value can be overridden on the command line, e.g.  --set train.max_epochs=50 model.hidden=96
+# A run freezes its config into runs/<run>/config.yaml at first start; resuming uses that frozen copy.
+
+data:
+  processed_dir: data/processed        # graphs, splits, sequences, normalisation stats
+  embeddings_dir: data/embeddings      # written by `python -m abset_ppi.embed`
+
+embeddings:
+  use: true                            # use protein language-model embeddings as node features
+  model: facebook/esm2_t33_650M_UR50D  # Hugging Face model id (downloaded once, ~2.6 GB)
+  dim: 1280                            # embedding size of that model (650M: 1280, 150M: 640, 35M: 480, 8M: 320)
+  batch_tokens: 4000                   # GPU memory knob for the embed step
+  window: 1000                         # sequences longer than this are embedded in overlapping windows
+
+model:
+  hidden: 128                          # node state size
+  edge_hidden: 64                      # edge state size
+  heads: 8
+  graph_layers: 6                      # geometric graph-transformer blocks
+  cross_layers: 2                      # antibody <-> antigen cross-attention blocks
+  cross_cutoff: 10.0                   # residues within this many Å of the partner join cross-attention
+  plm_proj: 64                         # language-model embedding is projected to this size
+  rbf_bins: 16                         # Gaussian expansion of each distance over 0–20 Å
+  dropout: 0.2
+
+train:
+  folds: [0, 1, 2, 3, 4]               # cross-validation folds to train; the test set is never trained on
+  max_epochs: 60
+  patience: 12                         # early stopping: epochs without validation improvement
+  early_stop_metric: val_logloss_prior # lower is better; alternatives: val_roc_auc (higher is better)
+  batch_size: 16                       # graphs per optimisation step
+  lr: 0.0003
+  weight_decay: 0.01
+  warmup_frac: 0.05
+  grad_clip: 1.0
+  label_smoothing: 0.05
+  loss_weights: {main: 1.0, dockq: 0.5, residue: 0.3, rank: 0.2}
+  matched_pair_prob: 0.5               # chance a negative brings its matching crystal positive into the epoch
+  amp: false                           # mixed precision on GPU; off by default for numerical safety
+  seed: 0
+  log_every: 20                        # steps between progress lines inside an epoch
+
+calibration:
+  prior: 0.01                          # expected share of true binding orientations at deployment (pi)
+
+eval:
+  batch_size: 32

@@ -1,0 +1,3 @@
+epoch,seconds,lr,train_loss,train_main,train_dockq,train_residue,train_rank,val_roc_auc,val_pr_auc_prior,val_logloss_prior,val_brier_prior,val_ece_prior,val_mcc_prior,val_recall,val_mean_p_pos,val_mean_p_neg,best_so_far
+1,1.2,0.00018337814009344714,1.09808,0.67348,0.21992,0.46753,0.87192,1.0,1.0,0.05358,0.00985,0.00024,0.0,0.0,0.01243,0.00974,1
+2,0.8,0.0,0.95146,0.62523,0.21517,0.31174,0.62562,1.0,1.0,0.05215,0.00982,0.00175,0.0,0.0,0.01234,0.0082,1

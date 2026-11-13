@@ -1,0 +1,2 @@
+id,probability,predicted_binding,mean_logit,label,logit_fold0,logit_fold1,logit_fold2,logit_fold3,logit_fold4
+exp:1a2y_1,0.986903,1,3.9521,1,4.2133,3.8856,3.8436,3.9452,3.8726

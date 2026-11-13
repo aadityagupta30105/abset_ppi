@@ -1,0 +1,24 @@
+{
+ "fold": 4,
+ "epochs_run": 24,
+ "best_epoch": 12,
+ "best_metric_name": "val_logloss_prior",
+ "best_metric": 0.011541781661311036,
+ "val_metrics_at_best": {
+  "n": 1219,
+  "n_pos": 552,
+  "n_neg": 667,
+  "roc_auc": 1.0,
+  "pr_auc_prior": 1.0,
+  "logloss_prior": 0.011541781661311036,
+  "brier_prior": 0.004589112117970439,
+  "ece_prior": 0.007001200634537326,
+  "threshold": 0.5,
+  "recall": 0.0,
+  "specificity": 1.0,
+  "precision_prior": 0.0,
+  "mcc_prior": 0.0,
+  "mean_p_pos": 0.3225870729613207,
+  "mean_p_neg": 0.00022936501429346765
+ }
+}

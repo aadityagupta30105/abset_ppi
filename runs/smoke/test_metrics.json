@@ -1,0 +1,91 @@
+{
+ "cross_validation_per_fold": {
+  "0": {
+   "n": 32,
+   "n_pos": 24,
+   "n_neg": 8,
+   "roc_auc": 1.0,
+   "pr_auc_prior": 1.0,
+   "logloss_prior": 0.052146901124144045,
+   "brier_prior": 0.009821568781001096,
+   "ece_prior": 0.0017537244760105625,
+   "threshold": 0.5,
+   "recall": 0.0,
+   "specificity": 1.0,
+   "precision_prior": 0.0,
+   "mcc_prior": 0.0,
+   "mean_p_pos": 0.012343436374020482,
+   "mean_p_neg": 0.008204890060857811
+  }
+ },
+ "cross_validation_mean_std": {
+  "roc_auc": {
+   "mean": 1.0,
+   "std": 0.0
+  },
+  "pr_auc_prior": {
+   "mean": 1.0,
+   "std": 0.0
+  },
+  "logloss_prior": {
+   "mean": 0.052146901124144045,
+   "std": 0.0
+  },
+  "brier_prior": {
+   "mean": 0.009821568781001096,
+   "std": 0.0
+  }
+ },
+ "oof_calibrated": {
+  "n": 32,
+  "n_pos": 24,
+  "n_neg": 8,
+  "roc_auc": 1.0,
+  "pr_auc_prior": 1.0,
+  "logloss_prior": 0.044397752937841234,
+  "brier_prior": 0.00946154095591974,
+  "ece_prior": 3.1120910982049277e-06,
+  "threshold": 0.012714248044428642,
+  "recall": 1.0,
+  "specificity": 1.0,
+  "precision_prior": 1.0,
+  "mcc_prior": 1.0,
+  "mean_p_pos": 0.03236475380259126,
+  "mean_p_neg": 0.009777236922295244
+ },
+ "test": {
+  "n": 32,
+  "n_pos": 24,
+  "n_neg": 8,
+  "roc_auc": 0.9166666666666666,
+  "pr_auc_prior": 0.9175,
+  "logloss_prior": 0.04554230841260976,
+  "brier_prior": 0.009488759626384664,
+  "ece_prior": 0.000614356896565256,
+  "threshold": 0.012714248044428642,
+  "recall": 0.9166666666666666,
+  "specificity": 0.875,
+  "precision_prior": 0.06896551724137931,
+  "mcc_prior": 0.23202769014712946,
+  "mean_p_pos": 0.030446233677301957,
+  "mean_p_neg": 0.009172909865314872
+ },
+ "calibration": {
+  "prior": 0.01,
+  "a": 2.926434020918952,
+  "b": -4.044130671418489,
+  "fit_converged": true,
+  "threshold": 0.012714248044428642,
+  "oof_mcc_at_threshold": 1.0,
+  "formula": "p = 1 / (1 + exp(-(a * mean_fold_logit + b)))"
+ },
+ "test_reliability": [
+  {
+   "bin": "0.0-0.1",
+   "n": 32,
+   "mean_pred": 0.009385643103434744,
+   "observed": 0.01
+  }
+ ],
+ "notes": "All *_prior metrics weight classes to the deployment prior. Test has few negatives; treat as indicative."
+}
